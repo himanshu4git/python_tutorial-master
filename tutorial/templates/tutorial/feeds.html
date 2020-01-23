@@ -1,0 +1,25 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE.txt in the project root for license information. -->
+{% extends "tutorial/layout.html" %}
+{% block content %}
+<h1>Your Feeds</h1>
+<table class="table">
+  <tr>
+    <th>Feed id</th>
+    <th>userDisplayName</th>
+    <th>userPrincipalName</th>
+     <th>Activity Time</th>
+    <th>location</th>
+  </tr>
+
+  {% for feed in feeds %}
+    <tr>
+      <td>{{ feed.id }}</td>
+      <td>{{ feed.userDisplayName }}</td>
+      <td>{{ feed.userPrincipalName}}</td>
+        <td>{{feed.createdDateTime}}</td>
+      <td>{{ feed.location.city}}</td>
+
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}
